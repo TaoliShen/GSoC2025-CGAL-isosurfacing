@@ -3,7 +3,7 @@
 
 This repository documents my **Google Summer of Code 2025** project with **CGAL (GeometryFactory)**,
 focused on the design and implementation of **Enhanced Dual Contouring** algorithms
-for **topologically correct, manifold isosurfacing**.
+for **topologically correct, manifold isosurfacing**, implemented in  **C++ (17+)**
 
 The work extends CGAL’s existing isosurfacing pipeline by addressing ambiguous
 configurations and nonmanifold artifacts that arise in standard isosurfacing methods (Marching Cubes, Dual Contouring, etc)
