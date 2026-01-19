@@ -44,9 +44,9 @@ nonmanifoldness and the design of targeted post-processing strategies.
   <img src="figures/DMC-QEM nonmanifold edges.png" width="35%" />
 </p>
 
-**Figure 1.** Top: Comparison of DC (left) and DMC (right)
+**Figure 1.** (Top) Comparison of DC (left) and DMC (right)
 using QEM-based dual vertex placement on a sample mesh. DMC reduces nonmanifold artifacts but they still exist.
-Bottom: Visualization of nonmanifold edges (highlighted in red). 
+(Bottom) Visualization of nonmanifold edges (highlighted in red). 
 
 ---
 
@@ -110,7 +110,7 @@ Despite these improvements, systematic testing revealed that **tunnel configurat
 still generate nonmanifold edges even under TMC–DMC.
 
 <p align="center">
-  <img src="figures/TMC-DMC.png" width="33%" />
+  <img src="figures/TMC-DMC.png" width="38%" />
 </p>
 
 **Figure 2.** Result of the TMC–DMC pipeline after resolving ambiguous marching cubes
@@ -140,8 +140,8 @@ This observation strongly suggested that a dedicated tunnel-resolution strategy 
 required.
 
 <p>
-  <img src="figures/example-tunnel-nonmanifold-1.png" width="45%" />
-  <img src="figures/example-tunnel-nonmanifold-2.png" width="45%" />
+  <img src="figures/example-tunnel-nonmanifold-1.png" width="34%" />
+  <img src="figures/example-tunnel-nonmanifold-2.png" width="35.8%" />
 </p>
 
 **Figure 3.** Example of a tunnel-induced nonmanifold edge configuration. Multiple surface patches intersect at a single edge, violating manifoldness. Vertex indices are shown to illustrate the local connectivity responsible for the tunnel configuration.
@@ -184,9 +184,9 @@ correct tunnel topology.
 
 <!-- Row 1: algorithm steps -->
 <p>
-  <img src="figures/tunnel-recovery-step1-subdivide.png" width="32%" />
-  <img src="figures/tunnel-recovery-step2-remove.png" width="32%" />
-  <img src="figures/tunnel-recovery-step3-merge.png" width="32%" />
+  <img src="figures/tunnel-recovery-step1-subdivide.png" width="29%" />
+  <img src="figures/tunnel-recovery-step2-remove.png" width="31%" />
+  <img src="figures/tunnel-recovery-step3-merge.png" width="37%" />
 </p>
 
 *Top row:* (Left) subdivision of incident quads; (Center) removal of conflicting
@@ -194,8 +194,8 @@ incident faces; (Right) vertex merging to restore manifold connectivity.
 
 <!-- Row 2: before / after -->
 <p>
-  <img src="figures/tunnel-recovery-before.png" width="48%" />
-  <img src="figures/tunnel-recovery-after.png" width="48%" />
+  <img src="figures/tunnel-recovery-before.png" width="35%" />
+  <img src="figures/tunnel-recovery-after.png" width="34.5%" />
 </p>
 
 *Bottom row:* (Left) nonmanifold edge prior to recovery; (Right) resulting tunnel
@@ -216,15 +216,26 @@ insufficient. I extended the post-processing to:
 
 This extension recovers multiple adjacent tunnels while maintaining manifoldness.
 
-<p align="center">
-  <img src="figures/resolving-neighboring-nonmanifold-edges.png" width="70%" />
+
+<!-- Row 1: before -->
+<p>
+  <img src="figures/neighbor-nme-before-front.png" width="45%" />
+  <img src="figures/neighbor-nme-before-top.png" width="45%" />
 </p>
 
+*Top row:* Before recovery. (Left) front view; (Right) top view.
+
+<!-- Row 2: after -->
+<p>
+  <img src="figures/neighbor-nme-after-front.png" width="45%" />
+  <img src="figures/neighbor-nme-after-top.png" width="45%" />
+</p>
+
+*Bottom row:* After recovery. (Left) front view; (Right) top view.
 **Figure 5.** Resolution of neighboring nonmanifold edges. The top row shows the
-original configuration with adjacent nonmanifold edges highlighted in red, viewed
-from the front (left) and top (right). The bottom row shows the resolved configuration
-after tunnel recovery, where each nonmanifold edge is replaced by a topologically
-valid tunnel.
+original configuration with adjacent nonmanifold edges highlighted in red. The
+bottom row shows the configuration after tunnel recovery, where nonmanifold edges
+are replaced by topologically valid tunnels.
 
 ---
 
