@@ -58,7 +58,7 @@ The project followed a three-stage progression:
 2. **Integration of Topologically Correct Marching Cubes (TMC)** to handle ambiguous
    marching cubes configurations (e.g., MC case 105).
 3. **Automated resolution of nonmanifold edges** using graph-based post-processing inspired
-   by the method of Zint, Grosso, and Gürtler (https://diglib.eg.org/server/api/core/bitstreams/561b6de0-f239-478a-8ae0-717bb42aec3b/content) in the case when tunnels are generated with the TMC look-up table.
+   by the method of [Zint, Grosso, and Gürtler](https://diglib.eg.org/server/api/core/bitstreams/561b6de0-f239-478a-8ae0-717bb42aec3b/content) in the case when tunnels are generated with the TMC look-up table.
 
 Each stage revealed new failure modes and informed subsequent design decisions.
 
@@ -219,29 +219,27 @@ This extension recovers multiple adjacent tunnels while maintaining manifoldness
 
 <!-- Row 1: before -->
 <p>
-  <img src="figures/neighbor-nme-before-front.png" width="45%" />
-  <img src="figures/neighbor-nme-before-top.png" width="45%" />
+  <img src="figures/neighbor-nme-before-front.png" width="32%" />
+  <img src="figures/neighbor-nme-before-top.png" width="32%" />
 </p>
-
-*Top row:* Before recovery. (Left) front view; (Right) top view.
 
 <!-- Row 2: after -->
 <p>
-  <img src="figures/neighbor-nme-after-front.png" width="45%" />
-  <img src="figures/neighbor-nme-after-top.png" width="45%" />
+  <img src="figures/neighbor-nme-after-front.png" width="32%" />
+  <img src="figures/neighbor-nme-after-top.png" width="32%" />
 </p>
 
-*Bottom row:* After recovery. (Left) front view; (Right) top view.
-**Figure 5.** Resolution of neighboring nonmanifold edges. The top row shows the
+**Figure 5.** 
+Resolution of neighboring nonmanifold edges. (Left) front view; (Right) top view. The top row shows the
 original configuration with adjacent nonmanifold edges highlighted in red. The
-bottom row shows the configuration after tunnel recovery, where nonmanifold edges
+bottom row shows the configuration after tunnel recovery, where all adjacent nonmanifold edges
 are replaced by topologically valid tunnels.
 
 ---
 
 ## 9. Nonmanifold Vertices and Boundary Padding
 
-While the post-processing reliably resolves **nonmanifold edges**, **nonmanifold vertices
+While the post-processing reliably resolves nonmanifold edges, **nonmanifold vertices
 (NMVs)** may still arise, and in some cases can be introduced by the edge-resolution step.
 
 Following suggestions in the literature, I implemented **ghost-layer padding** at the grid
